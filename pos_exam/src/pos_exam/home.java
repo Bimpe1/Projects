@@ -6,6 +6,7 @@
 package pos_exam;
 
 import java.awt.Image;
+import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,6 +46,7 @@ import java.util.Timer;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.TimerTask;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -256,21 +258,9 @@ public class home extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
         jTextField14 = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jSpinField1 = new com.toedter.components.JSpinField();
-        jSpinField2 = new com.toedter.components.JSpinField();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
-        jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -315,7 +305,6 @@ public class home extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos_exam/img/add.jpg"))); // NOI18N
         jButton2.setText("Add");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,7 +329,7 @@ public class home extends javax.swing.JFrame {
         jLabel14.setText("Department:");
 
         jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "IT Manager", "Sales Manager", "Inventory/Stocks Manager", "Sales person", "Inventory staff" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "IT Manager", "IT Admin", "Sales Manager", "Inventory/Stocks Manager", "Sales person", "Inventory staff" }));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -349,7 +338,6 @@ public class home extends javax.swing.JFrame {
         jTextField8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos_exam/img/clear.jpg"))); // NOI18N
         jButton7.setText("Clear");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,7 +378,7 @@ public class home extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox4, 0, 533, Short.MAX_VALUE)
                                     .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTextField3)
                                     .addComponent(jTextField6)
@@ -410,20 +398,19 @@ public class home extends javax.swing.JFrame {
                                         .addGap(21, 21, 21)))))
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 280, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(92, 92, 92))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(289, 289, 289))))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel13)
+                        .addGap(289, 289, 289))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(204, 204, 204)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(213, 213, 213)
-                .addComponent(jButton7)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(109, 109, 109))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -489,8 +476,8 @@ public class home extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,6 +487,8 @@ public class home extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab(" Staff Registration", jPanel4);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -542,7 +531,6 @@ public class home extends javax.swing.JFrame {
         });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos_exam/img/update.jpg"))); // NOI18N
         jButton5.setText("Update");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -567,7 +555,7 @@ public class home extends javax.swing.JFrame {
         jLabel22.setText("Department:");
 
         jComboBox6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "IT Manager", "Sales Manager", "Inventory/Stocks Manager", "Sales person", "Inventory staff" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "IT Manager", "IT Admin", "Sales Manager", "Inventory/Stocks Manager", "Sales person", "Inventory staff" }));
 
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -576,7 +564,6 @@ public class home extends javax.swing.JFrame {
         jTextField12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos_exam/img/clear.jpg"))); // NOI18N
         jButton8.setText("Clear");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -753,19 +740,6 @@ public class home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Update Records", jPanel2);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1002, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 734, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Report", jPanel6);
-
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -791,108 +765,6 @@ public class home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Notifications", jPanel7);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jLabel2.setText("Schedule Backup");
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Date:");
-
-        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel25.setText("Time:");
-
-        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel26.setText("jLabel26");
-
-        jSpinField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jSpinField1.setMaximum(23);
-        jSpinField1.setMinimum(0);
-        jSpinField1.setMinimumSize(new java.awt.Dimension(32, 28));
-        jSpinField1.setValue(00);
-
-        jSpinField2.setFocusable(false);
-        jSpinField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jSpinField2.setMaximum(59);
-        jSpinField2.setMinimum(0);
-        jSpinField2.setValue(00);
-
-        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel27.setText("hr");
-
-        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel28.setText("min");
-
-        jButton10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton10.setText("Backup");
-        jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
-        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel29.setText("Using 24 hours time format");
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(356, 356, 356)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSpinField1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jSpinField2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel28))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel29)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(388, 388, 388)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(310, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
-                .addGap(64, 64, 64)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel26))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel25)
-                            .addComponent(jSpinField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel27))
-                .addGap(38, 38, 38)
-                .addComponent(jLabel29)
-                .addGap(20, 20, 20)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(418, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Schedule backup", jPanel8);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -905,89 +777,190 @@ public class home extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-//public void DateandTime() {
-//        Timer timer = new Timer(1000, new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                // Get the current time
-//                currentTime = LocalTime.now();
-//                currentDate = LocalDate.now();
-//
-//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-//                String formattedTime = currentTime.format(formatter);
-//
-//                // Display the formatted time
-//                jLabel26.setText(currentDate.toString() + " " + formattedTime);
-//            }
-//        });
-//
-//        // Start the timer
-//        timer.start();
-//    }
 
-//    public static void performDatabaseBackup(String databaseUser, String databasePassword,
-//            String databaseName, String backupFilePath) {
-//        // Construct the mysqldump command
-//        String mysqldumpPath = "\"C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump.exe\"";
-//        String[] command = {
-//            mysqldumpPath,
-//            "-u" + databaseUser,
-//            "--password=" + databasePassword,
-//            databaseName,
-//            "--result-file=" + backupFilePath
-//        };
-//
-//        try {
-//            // Execute the mysqldump command
-//            ProcessBuilder processBuilder = new ProcessBuilder(command);
-//            processBuilder.redirectErrorStream(true);  // Merge error and output streams
-//            Process process = processBuilder.start();
-//
-//            // Capture the output (both error and normal output) of the process
-//            InputStream inputStream = process.getInputStream();
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-//            String line;
-//            while ((line = reader.readLine()) != null) {
-//                System.out.println(line);
-//            }
-//
-//            int exitCode = process.waitFor();
-//
-//            if (exitCode == 0) {
-//                System.out.println("Backup completed successfully.");
-//            } else {
-//                System.err.println("Backup failed. Exit code: " + exitCode);
-//            }
-//        } catch (IOException | InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-    private void BirthdayReminder() {
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+
+        String id = jTextField15.getText();
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
+            PreparedStatement ps = con.prepareStatement("select * from userregistration where id=?"); // Corrected SQL query
+
+            ps.setString(1, id); // Set the parameter for the prepared statement
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                jTextField14.setText(rs.getString("id"));
+                jTextField4.setText(rs.getString("name"));
+                jDateChooser2.setDate(rs.getDate("dob"));
+                jTextField5.setText(rs.getString(4));
+                oldEmail = rs.getString(5);
+                jTextField10.setText(rs.getString(5));
+
+                String gender = rs.getString(6);
+                int count = jComboBox5.getItemCount();
+                for (int i = 0; i < count; i++) {
+                    if (gender.equalsIgnoreCase(jComboBox5.getItemAt(i).toString())) {
+                        jComboBox5.setSelectedIndex(i);
+                        break;
+                    }
+                }
+                oldUsername = rs.getString(7);
+                jTextField11.setText(rs.getString(7));
+                oldPassword = rs.getString(8);
+                jTextField9.setText(rs.getString(8));
+
+                String department = rs.getString(9);
+                int count1 = jComboBox6.getItemCount();
+                for (int i = 0; i < count1; i++) {
+                    if (department.equalsIgnoreCase(jComboBox6.getItemAt(i).toString())) {
+                        jComboBox6.setSelectedIndex(i); // Corrected the combo box reference
+                        break;
+                    }
+                }
+                photo = rs.getBytes("picture");
+                ImageIcon ic = new ImageIcon(photo);
+                Image im = ic.getImage();
+                Image scaled = im.getScaledInstance(jLabel20.getWidth(), jLabel20.getHeight(), Image.SCALE_SMOOTH);
+                ImageIcon scaledIc = new ImageIcon(scaled);
+                jLabel20.setIcon(scaledIc);
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "No record for " + id); // Print the exception details for debugging
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jTextField14.setText(null);
+        jTextField15.setText(null);
+        jTextField4.setText(null);
+        jTextField5.setText(null);
+        jTextField10.setText(null);
+        jTextField11.setText(null);
+        jTextField12.setText(null);
+        jTextField9.setText(null);
+        jComboBox5.setSelectedIndex(0);
+        jComboBox6.setSelectedIndex(0);
+        jDateChooser2.setDate(null);
+        jLabel20.setIcon(null);          // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        webcam2 jfrm1 = new webcam2();
+        jfrm1.show();
+        jfrm1.setVisible(true);// TODO add your handling code here:
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        String id = jTextField14.getText();
+        String name = jTextField4.getText();
+        Date date = jDateChooser2.getDate();
+        java.sql.Date dob = new java.sql.Date(date.getTime());
+        String phoneno = jTextField5.getText();
+        String email = jTextField10.getText();
+        String gender = jComboBox5.getSelectedItem().toString();
+        String username = jTextField11.getText();
+        String password = jTextField9.getText();
+        String hashpassword = Hash(password);
+        String department = jComboBox6.getSelectedItem().toString();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
-            PreparedStatement ps = con.prepareStatement("select * from userregistration");
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                name = rs.getString("name");
-                dob = rs.getString("dob");
-                currentDate = LocalDate.now();
-                String currentDayMonth = currentDate.format(DateTimeFormatter.ofPattern("MM-dd"));
-                String userDayMonth = new SimpleDateFormat("MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(dob));
+            PreparedStatement ps = con.prepareStatement("UPDATE userregistration SET name=?, dob=?, phoneno=?, email=?, gender=?, username=?, password=?, department=?,picture=? WHERE id=?");
+            ps.setString(1, name);
+            ps.setDate(2, dob);
+            ps.setString(3, phoneno);
+            ps.setString(4, email);
+            ps.setString(5, gender);
+            ps.setString(6, username);
+            ps.setString(7, hashpassword);
+            ps.setString(8, department);
+            ps.setBytes(10, photo);
+            ps.setString(11, id);
 
-                if (currentDayMonth.equals(userDayMonth)) {
-                    text = "Happy Birthday " + name + "!";
-                    JOptionPane.showMessageDialog(rootPane, "Happy Birthday " + name + "!");
-                    notifications.add(text);
+            int rs = ps.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Update Successful..");
 
+            if (!password.equals(oldPassword) || !username.equals(oldUsername) || !email.equals(oldEmail)) {
+                String receiver = email;
+                String senderEmail = "adetobaadebimpe@gmail.com";
+                String senderPassword = "fxczbtaorwpkjrns";
+                Properties props = new Properties();
+                props.put("mail.smtp.auth", "true");
+                props.put("mail.smtp.starttls.enable", "true");
+                props.put("mail.smtp.host", "smtp.gmail.com");
+                props.put("mail.smtp.port", "587");
+                Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(senderEmail, senderPassword);
+                    }
+                });
+
+                try {
+                    Message message = new MimeMessage(session);
+                    message.setFrom(new InternetAddress(senderEmail));
+                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiver));
+                    message.setSubject("Log in details for CBT");
+                    message.setText("Below are your updated log in details for your cbt test\nUsername: " + username + "\nPassword: " + password + "\nGood Luck!!");
+                    Transport.send(message);
+                    JOptionPane.showMessageDialog(rootPane, "Email Sent");
+                } catch (MessagingException e) {
+                    e.printStackTrace();
                 }
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Image", "jpg");
+
+            jFileChooser1.setAcceptAllFileFilterUsed(false);
+            jFileChooser1.addChoosableFileFilter(filter);
+            jFileChooser1.showOpenDialog(null);
+
+            File f = jFileChooser1.getSelectedFile();
+            filename = f.getAbsolutePath();
+            String path = f.getAbsolutePath();
+            jTextField12.setText(path);
+
+            Image im = Toolkit.getDefaultToolkit().createImage(path);
+            im = im.getScaledInstance(jLabel20.getWidth(), jLabel20.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ic = new ImageIcon(im);
+            jLabel20.setIcon(ic);
+
+            File image = new File(filename);
+            FileInputStream fis = new FileInputStream(image);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            byte[] Byte = new byte[1024];
+
+            for (int i = 0; (i = fis.read(Byte)) != -1;) {
+                baos.write(Byte, 0, i);
+            }
+            photo = baos.toByteArray();
         } catch (Exception e) {
 
-        }
-    }
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        jTextField1.setText(null);
+        jTextField2.setText(null);
+        jTextField3.setText(null);
+        jTextField6.setText(null);
+        jTextField7.setText(null);
+        jTextField13.setText(null);
+        jTextField8.setText(null);
+        jComboBox3.setSelectedIndex(0);
+        jComboBox4.setSelectedIndex(0);
+        jDateChooser1.setDate(null);
+        jLabel10.setIcon(null);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         webcam1 jfrm1 = new webcam1();
@@ -1085,193 +1058,122 @@ public class home extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+//public void DateandTime() {
+//        Timer timer = new Timer(1000, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                // Get the current time
+//                currentTime = LocalTime.now();
+//                currentDate = LocalDate.now();
+//
+//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+//                String formattedTime = currentTime.format(formatter);
+//
+//                // Display the formatted time
+//                jLabel26.setText(currentDate.toString() + " " + formattedTime);
+//            }
+//        });
+//
+//        // Start the timer
+//        timer.start();
+//    }
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        jTextField1.setText(null);
-        jTextField2.setText(null);
-        jTextField3.setText(null);
-        jTextField6.setText(null);
-        jTextField7.setText(null);
-        jTextField13.setText(null);
-        jTextField8.setText(null);
-        jComboBox3.setSelectedIndex(0);
-        jComboBox4.setSelectedIndex(0);
-        jDateChooser1.setDate(null);
-        jLabel10.setIcon(null);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+//    public static void performDatabaseBackup(String databaseUser, String databasePassword,
+//            String databaseName, String backupFilePath) {
+//        // Construct the mysqldump command
+//        String mysqldumpPath = "\"C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump.exe\"";
+//        String[] command = {
+//            mysqldumpPath,
+//            "-u" + databaseUser,
+//            "--password=" + databasePassword,
+//            databaseName,
+//            "--result-file=" + backupFilePath
+//        };
+//
+//        try {
+//            // Execute the mysqldump command
+//            ProcessBuilder processBuilder = new ProcessBuilder(command);
+//            processBuilder.redirectErrorStream(true);  // Merge error and output streams
+//            Process process = processBuilder.start();
+//
+//            // Capture the output (both error and normal output) of the process
+//            InputStream inputStream = process.getInputStream();
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+//            String line;
+//            while ((line = reader.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//
+//            int exitCode = process.waitFor();
+//
+//            if (exitCode == 0) {
+//                System.out.println("Backup completed successfully.");
+//            } else {
+//                System.err.println("Backup failed. Exit code: " + exitCode);
+//            }
+//        } catch (IOException | InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+   private void BirthdayReminder() {
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
+        PreparedStatement ps = con.prepareStatement("select * from userregistration");
+        ResultSet rs = ps.executeQuery();
+        
+        // Get today's date in MM-dd format
+        String currentDayMonth = LocalDate.now().format(DateTimeFormatter.ofPattern("MM-dd"));
+        
+        while (rs.next()) {
+             name = rs.getString("name");
+             dob = rs.getString("dob");
+            
+            // Get user's birthday in MM-dd format
+            String userDayMonth = new SimpleDateFormat("MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(dob));
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Image", "jpg");
-
-            jFileChooser1.setAcceptAllFileFilterUsed(false);
-            jFileChooser1.addChoosableFileFilter(filter);
-            jFileChooser1.showOpenDialog(null);
-
-            File f = jFileChooser1.getSelectedFile();
-            filename = f.getAbsolutePath();
-            String path = f.getAbsolutePath();
-            jTextField12.setText(path);
-
-            Image im = Toolkit.getDefaultToolkit().createImage(path);
-            im = im.getScaledInstance(jLabel20.getWidth(), jLabel20.getHeight(), Image.SCALE_SMOOTH);
-            ImageIcon ic = new ImageIcon(im);
-            jLabel20.setIcon(ic);
-
-            File image = new File(filename);
-            FileInputStream fis = new FileInputStream(image);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            byte[] Byte = new byte[1024];
-
-            for (int i = 0; (i = fis.read(Byte)) != -1;) {
-                baos.write(Byte, 0, i);
+            if (currentDayMonth.equals(userDayMonth)) {
+                 text = "Happy Birthday " + name + "!";
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            JOptionPane.showMessageDialog(rootPane, text);
+                        }
+                    },1000);
+                break;
             }
-            photo = baos.toByteArray();
-        } catch (Exception e) {
-
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String id = jTextField14.getText();
-        String name = jTextField4.getText();
-        Date date = jDateChooser2.getDate();
-        java.sql.Date dob = new java.sql.Date(date.getTime());
-        String phoneno = jTextField5.getText();
-        String email = jTextField10.getText();
-        String gender = jComboBox5.getSelectedItem().toString();
-        String username = jTextField11.getText();
-        String password = jTextField9.getText();
-        String hashpassword = Hash(password);
-        String department = jComboBox6.getSelectedItem().toString();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
-            PreparedStatement ps = con.prepareStatement("UPDATE userregistration SET name=?, dob=?, phoneno=?, email=?, gender=?, username=?, password=?, department=?,picture=? WHERE id=?");
-            ps.setString(1, name);
-            ps.setDate(2, dob);
-            ps.setString(3, phoneno);
-            ps.setString(4, email);
-            ps.setString(5, gender);
-            ps.setString(6, username);
-            ps.setString(7, hashpassword);
-            ps.setString(8, department);
-            ps.setBytes(10, photo);
-            ps.setString(11, id);
-
-            int rs = ps.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Update Successful..");
-
-            if (!password.equals(oldPassword) || !username.equals(oldUsername) || !email.equals(oldEmail)) {
-                String receiver = email;
-                String senderEmail = "adetobaadebimpe@gmail.com";
-                String senderPassword = "fxczbtaorwpkjrns";
-                Properties props = new Properties();
-                props.put("mail.smtp.auth", "true");
-                props.put("mail.smtp.starttls.enable", "true");
-                props.put("mail.smtp.host", "smtp.gmail.com");
-                props.put("mail.smtp.port", "587");
-                Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(senderEmail, senderPassword);
-                    }
-                });
-
-                try {
-                    Message message = new MimeMessage(session);
-                    message.setFrom(new InternetAddress(senderEmail));
-                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiver));
-                    message.setSubject("Log in details for CBT");
-                    message.setText("Below are your updated log in details for your cbt test\nUsername: " + username + "\nPassword: " + password + "\nGood Luck!!");
-                    Transport.send(message);
-                    JOptionPane.showMessageDialog(rootPane, "Email Sent");
-                } catch (MessagingException e) {
-                    e.printStackTrace();
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, e);
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+                    notifications.add(text);
+        con.close(); // Close connection when done
+    } catch (Exception e) {
+        e.printStackTrace(); // Handle exception appropriately
+    }
+}
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        webcam2 jfrm1 = new webcam2();
-        jfrm1.show();
-        jfrm1.setVisible(true);// TODO add your handling code here:
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        jTextField14.setText(null);
-        jTextField15.setText(null);
-        jTextField4.setText(null);
-        jTextField5.setText(null);
-        jTextField10.setText(null);
-        jTextField11.setText(null);
-        jTextField12.setText(null);
-        jTextField9.setText(null);
-        jComboBox5.setSelectedIndex(0);
-        jComboBox6.setSelectedIndex(0);
-        jDateChooser2.setDate(null);
-        jLabel20.setIcon(null);          // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-
-        String id = jTextField15.getText();
-        try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
-            PreparedStatement ps = con.prepareStatement("select * from userregistration where id=?"); // Corrected SQL query
-
-            ps.setString(1, id); // Set the parameter for the prepared statement
-
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                jTextField14.setText(rs.getString("id"));
-                jTextField4.setText(rs.getString("name"));
-                jDateChooser2.setDate(rs.getDate("dob"));
-                jTextField5.setText(rs.getString(4));
-                oldEmail = rs.getString(5);
-                jTextField10.setText(rs.getString(5));
-
-                String gender = rs.getString(6);
-                int count = jComboBox5.getItemCount();
-                for (int i = 0; i < count; i++) {
-                    if (gender.equalsIgnoreCase(jComboBox5.getItemAt(i).toString())) {
-                        jComboBox5.setSelectedIndex(i);
-                        break;
-                    }
-                }
-                oldUsername = rs.getString(7);
-                jTextField11.setText(rs.getString(7));
-                oldPassword = rs.getString(8);
-                jTextField9.setText(rs.getString(8));
-
-                String department = rs.getString(9);
-                int count1 = jComboBox6.getItemCount();
-                for (int i = 0; i < count1; i++) {
-                    if (department.equalsIgnoreCase(jComboBox6.getItemAt(i).toString())) {
-                        jComboBox6.setSelectedIndex(i); // Corrected the combo box reference
-                        break;
-                    }
-                }
-                photo = rs.getBytes("picture");
-                ImageIcon ic = new ImageIcon(photo);
-                Image im = ic.getImage();
-                Image scaled = im.getScaledInstance(jLabel20.getWidth(), jLabel20.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon scaledIc = new ImageIcon(scaled);
-                jLabel20.setIcon(scaledIc);
-
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "No record for " + id); // Print the exception details for debugging
-        }
-
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-
-    }//GEN-LAST:event_jButton10ActionPerformed
+//                if (currentDayMonth.equals(userDayMonth)) {
+//                        text = "Happy Birthday " + name + "!";
+//                    SwingUtilities.invokeLater(() -> {
+//                     Timer timer = new Timer(2000, new ActionListener() {
+//                        @Override
+//                        public void actionPerformed(ActionEvent e) {
+//                    JOptionPane.showMessageDialog(rootPane, "Happy Birthday " + name + "!");
+//                    
+//                            JOptionPane.showMessageDialog(rootPane, "Happy Birthday " + name + "!");
+//                        }
+//                                            notifications.add(text);
+//                    });
+//                    timer.setRepeats(false); // Execute only once
+//                    timer.start();
+//                };
+//                
+//            }
+//
+//        } catch (Exception e) {
+//
+//        }
+    
 
     /**
      * @param args the command line arguments
@@ -1309,7 +1211,6 @@ public class home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1336,18 +1237,11 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1359,12 +1253,8 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private com.toedter.components.JSpinField jSpinField1;
-    private com.toedter.components.JSpinField jSpinField2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;

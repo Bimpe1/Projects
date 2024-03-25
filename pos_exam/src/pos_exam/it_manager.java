@@ -22,21 +22,24 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimerTask;
 import java.util.Timer;
+import java.awt.Color;
+
 /**
  *
  * @author adeto
  */
 public class it_manager extends javax.swing.JFrame {
-String text;
-  ArrayList<String> notifications = new ArrayList<>();
-String dob;
+
+    String text;
+    ArrayList<String> notifications = new ArrayList<>();
+    String dob;
     String name;
- private static String backupTime = "00:00";
-private static Timer timer;
-     
+    private static String backupTime = "00:00";
+    private static Timer timer;
+
     public it_manager() {
         initComponents();
-         BirthdayReminder();
+        BirthdayReminder();
         for (String notification : notifications) {
             jTextArea1.append("- " + notification + "\n\n");
         }
@@ -168,10 +171,11 @@ private static Timer timer;
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  int hour = Integer.parseInt(jSpinner1.getValue().toString());
+        int hour = Integer.parseInt(jSpinner1.getValue().toString());
         int minute = Integer.parseInt(jSpinner2.getValue().toString());
 
         if ((hour < 0 || hour >= 24) || (minute < 0 || minute >= 60)) {
@@ -185,7 +189,7 @@ private static Timer timer;
                 String backupTime = formattedHour + ":" + formattedMinute;
                 System.out.println(backupTime);
 
-                Class.forName("com.mysql.cj.jdbc.Driver");                               
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
                 PreparedStatement ps = con.prepareStatement("insert into backup values(?)");
 
@@ -198,34 +202,43 @@ private static Timer timer;
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-private void BirthdayReminder() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
-            PreparedStatement ps = con.prepareStatement("select * from userregistration");
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                name = rs.getString("name");
-                dob = rs.getString("dob");
-                LocalDate currentDate = LocalDate.now();
-                String currentDayMonth = currentDate.format(DateTimeFormatter.ofPattern("MM-dd"));
-                String userDayMonth = new SimpleDateFormat("MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(dob));
-                
-                if (currentDayMonth.equals(userDayMonth)) {
-                     text= "Happy Birthday " + name + "!";
-                    JOptionPane.showMessageDialog(rootPane, "Happy Birthday " + name + "!");
-                                        notifications.add(text);
+    private void BirthdayReminder() {
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "$Temilolu12");
+        PreparedStatement ps = con.prepareStatement("select * from userregistration");
+        ResultSet rs = ps.executeQuery();
+        
+        // Get today's date in MM-dd format
+        String currentDayMonth = LocalDate.now().format(DateTimeFormatter.ofPattern("MM-dd"));
+        
+        while (rs.next()) {
+             name = rs.getString("name");
+             dob = rs.getString("dob");
+            
+            // Get user's birthday in MM-dd format
+            String userDayMonth = new SimpleDateFormat("MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(dob));
 
-                }
+            if (currentDayMonth.equals(userDayMonth)) {
+                 text = "Happy Birthday " + name + "!";
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            JOptionPane.showMessageDialog(rootPane, text);
+                        }
+                    },1000);
+                break;
             }
-
-        } catch (Exception e) {
-System.out.println(e);
         }
+                    notifications.add(text);
+        con.close(); // Close connection when done
+    } catch (Exception e) {
+        e.printStackTrace(); // Handle exception appropriately
     }
+}
 
-
-   /**
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {

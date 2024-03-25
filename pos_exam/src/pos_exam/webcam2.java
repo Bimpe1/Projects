@@ -8,6 +8,7 @@ package pos_exam;
 import static com.sun.webkit.graphics.WCImage.getImage;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -119,8 +120,10 @@ private void CaptureImage(JLabel image){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("jLabel1");
 
+        jButton1.setBackground(Color.decode("#FF432A"));
         jButton1.setText("Capture");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,6 +167,7 @@ private void CaptureImage(JLabel image){
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

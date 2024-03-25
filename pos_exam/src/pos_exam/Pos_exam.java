@@ -15,7 +15,7 @@ public class Pos_exam {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-                new login().setVisible(true);
+                new first().setVisible(true);
     }
     
 }
